@@ -165,8 +165,6 @@ Sie haben Defender for Endpoint erfolgreich aktiviert, um Warnungen mit Microsof
 
 In dieser Aufgabe konfigurieren Sie die Richtlinienindikatoren und erstellen eine prioritäre Benutzenden-Gruppe, die in Richtlinien zum Insider-Risiko verwendet werden kann.
 
-> [!note] Die Microsoft Defender for Endpoint-Indikatoren sind möglicherweise ausgegraut und können nicht ausgewählt werden, wenn die Integration aus der vorherigen Aufgabe noch nicht abgeschlossen ist. Warten Sie in diesem Fall einige Minuten, und aktualisieren Sie die Seite, bevor Sie fortfahren.
-
 1. Navigieren Sie in **Microsoft Edge** zu `https://purview.microsoft.com`.
 
 1. Wählen Sie **Einstellungen** > **Insider-Risikomanagement**.

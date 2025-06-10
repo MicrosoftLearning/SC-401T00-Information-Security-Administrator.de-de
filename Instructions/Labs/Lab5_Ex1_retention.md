@@ -89,7 +89,7 @@ In dieser Aufgabe veröffentlichen Sie die Kennzeichnung für die Aufbewahrung, 
 1. Auf der Seite **Benennen Sie Ihre Richtlinie** eingeben:
 
     - **Name**: `Sensitive Financial Data Retention`
-    - **Beschreibung:** `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, and OneDrive.`
+    - **Beschreibung:** `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, OneDrive, and Teams.`
 
 1. Wählen Sie **Weiter** aus.
 

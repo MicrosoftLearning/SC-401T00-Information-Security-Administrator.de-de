@@ -108,7 +108,7 @@ Sie können das Risiko weiter verringern, indem Sie Copilot daran hindern, durch
 
 1. Navigieren Sie in Microsoft Purview zu **DSPM für AI**, indem Sie **Lösungen** > **DSPM für AI** > **Empfehlungen** auswählen.
 
-1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in Microsoft 365 Copilot (Vorschau)** verwiesen wird.
+1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird**.
 
 1. Überprüfen Sie die in dieser Empfehlung bereitgestellten Hinweise.
 
@@ -144,19 +144,19 @@ Sie können das Risiko weiter verringern, indem Sie Copilot daran hindern, durch
 
 1. Kehren Sie zu **DSPM für KI-Empfehlungen** zurück, indem Sie **Lösungen** > **DSPM für KI** > **Empfehlungen** wählen.
 
-1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in Microsoft 365 Copilot (Vorschau)** verwiesen wird, und wählen Sie **Als abgeschlossen markieren**.
+1. Markieren Sie die Empfehlung **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird** und wählen Sie **Als abgeschlossen markieren**.
 
 Sie haben eine DLP-Richtlinie erstellt, die verhindert, dass gekennzeichnete Inhalte in Copilot-Prompts und -Antworten verwendet werden.
 
-## Aufgabe 4 - Führen Sie eine Datenbewertung durch, um nicht gekennzeichnete Inhalte zu erkennen
+## Aufgabe 4 – Durchführen einer Datenrisikobewertung, um nicht gekennzeichnete Inhalte zu erkennen
 
-Um mögliche Lücken in der Kennzeichnungsabdeckung zu erkennen, führen Sie eine Datenbewertung durch, um Dateien ohne Vertraulichkeitsbezeichnungen zu identifizieren, auf die Copilot zugreifen kann.
+Um mögliche Lücken in der Abdeckung der Bezeichnungen zu erkennen, führen Sie eine Datenrisikobewertung durch, um Dateien ohne Vertraulichkeitsbezeichnungen zu identifizieren, auf die Copilot zugreifen könnte.
 
-1. Wählen Sie unter **DSPM für AI** die Empfehlung mit dem Titel **Schützen Sie sensible Daten, auf die in Antworten von Copilot verwiesen wird**.
+1. Wählen Sie unter **DSPM für AI** die Empfehlung mit dem Titel **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird**.
 
-1. Überprüfen Sie im Bereich **Schutz sensibler Daten, auf die in Antworten von Copilot verwiesen wird** die Zusammenfassung und wählen Sie dann **Zu den Bewertungen gehen**.
+1. Überprüfen Sie im Bereich **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird** die Zusammenfassung und wählen Sie dann **Zu den Bewertungen wechseln**.
 
-1. Auf der Seite **Datenauswertungen (Vorschau)** wählen Sie **Auswertung erstellen (Vorschau)**
+1. Auf der Seite **Datenrisikobewertungen** wählen Sie **Benutzerdefinierte Bewertung erstellen**.
 
 1. Geben Sie auf der Seite **Grundlegende Details** ein:
 
