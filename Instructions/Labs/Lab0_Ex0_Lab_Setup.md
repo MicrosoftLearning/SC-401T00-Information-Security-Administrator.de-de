@@ -27,77 +27,79 @@ In dieser Übung konfigurieren Sie Ihre Umgebung und bereiten sie für Verwaltun
 
 In dieser Aufgabe aktivieren Sie die Überwachung im Microsoft Purview-Portal, um Portalaktivitäten zu überwachen.
 
-1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und bei Microsoft 365 mit dem MOD-Administrator-Konto angemeldet sein.
+1. Melden Sie sich bei Client 1 VM (SC-401-CL1) als Admin beim **SC-401-CL1\admin**-Konto an und melden Sie sich mit dem MOD-Admin-Konto bei Microsoft 365 an.
 
-1. Öffnen Sie ein erweitertes Terminal-Fenster, indem Sie mit der rechten Maustaste auf die Schaltfläche Windows klicken und dann **Terminal (Admin)** wählen.
+1. Navigieren Sie in Microsoft Edge zum Microsoft Purview-Portal, `https://purview.microsoft.com`, und melden sich an.
 
-1. Führen Sie das Cmdlet **Install Module** im Terminalfenster aus, um die neueste **Exchange Online PowerShell**-Modulversion zu installieren:
+1. Auf dem Bildschirm erscheint eine Meldung über das neue Microsoft Purview-Portal. Wählen Sie **Erste Schritte**, um Zugriff auf das neue Portal zu erhalten.
+
+    ![Screenshot des Bildschirms „Willkommen im neuen Microsoft Purview-Portal“.](../Media/welcome-purview-portal.png)
+
+1. Wählen Sie **Lösungen** in der linken Seitenleiste und wählen Sie dann **Überwachen**.
+
+1. Wählen Sie auf der Seite **Suche** die Leiste **Aufzeichnung von Benutzenden- und Admin-Aktivitäten starten** aus, um die Überwachungsprotokollierung zu aktivieren.
+
+    ![Der Screenshot zeigt die Schaltfläche „Aufzeichnung von Benutzenden- und Admin-Aktivitäten starten".](../Media/enable-audit-button.png)
+
+1. Sobald Sie diese Option wählen, sollte der blaue Balken von dieser Seite verschwinden.
+
+<!----- PowerShell instructions
+
+1. Open an elevated Terminal window by selecting the Windows button with the right mouse button and then select **Terminal (Admin)**.
+
+1. Run the **Install Module** cmdlet in the terminal window to install the latest **Exchange Online PowerShell** module version:
 
     ```powershell
     Install-Module ExchangeOnlineManagement
     ```
 
-1. Bestätigen Sie den Prompt des NuGet-Anbieters, indem Sie **Y** für Ja eingeben und **Eingabe** drücken.
+1. Confirm the NuGet provider prompt  by typing **Y** for Yes and press **Enter**.
 
-1. Bestätigen Sie den Sicherheitsdialog „Nicht vertrauenswürdiges Repository" mit **Y** für Ja und drücken Sie die **Eingabetaste**.  Dieser Vorgang nimmt einige Zeit in Anspruch.
+1. Confirm the Untrusted repository security dialog with **Y** for Yes and press **Enter**.  This process may take some time to complete.
 
-1. Führen Sie das Cmdlet **Set-ExecutionPolicy** aus, um Ihre Ausführungsrichtlinie zu ändern, und drücken Sie **Enter**.
+1. Run the **Set-ExecutionPolicy** cmdlet to change your execution policy and press **Enter**
 
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
     ```
 
-1. Schließen Sie das PowerShell-Fenster.
+1. Close the PowerShell window.
 
-1. Öffnen Sie ein normales (nicht übergeordnetes) PowerShell-Fenster, indem Sie mit der rechten Maustaste auf die Schaltfläche Windows klicken und **Terminal** wählen.
+1. Open a regular (non-elevated) PowerShell window by right-clicking the Windows button and selecting **Terminal**.
 
-1. Führen Sie das Cmdlet **Connect-ExchangeOnline** aus, um das Exchange Online PowerShell-Modul zu verwenden und eine Verbindung zu Ihrem Mandanten herzustellen:
+1. Run the **Connect-ExchangeOnline** cmdlet to use the Exchange Online PowerShell module and connect to your tenant:
 
     ```powershell
     Connect-ExchangeOnline
     ```
 
-1. Wenn das Fenster **Anmelden** angezeigt wird, melden Sie sich als `admin@WWLxZZZZZZ.onmicrosoft.com` an (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die Sie von Ihrem Provider für die Übung bereitgestellt haben). Das Passwort der administrierenden Person sollte von Ihrem Lab-Hosting-Anbieter bereitgestellt werden.
+1. When the **Sign in** window is displayed, sign in as `admin@WWLxZZZZZZ.onmicrosoft.com` (where ZZZZZZ is your unique tenant ID provided by your lab hosting provider). Admin's password should be provided by your lab hosting provider.
 
-1. Um zu überprüfen, ob Audit aktiviert ist, führen Sie das Cmdlet **Get-AdminAuditLogConfig** aus:
+1. To check if Audit is enabled, run the **Get-AdminAuditLogConfig** cmdlet:
 
     ```powershell
     Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled
     ```
 
-1. Wenn _UnifiedAuditLogIngestionEnabled_ den Wert false liefert, ist Audit deaktiviert.
+1. If _UnifiedAuditLogIngestionEnabled_ returns false, then Audit is disabled.
 
-1. Um das Überwachungsprotokoll zu aktivieren, führen Sie das Cmdlet **Set-AdminAuditLogConfig** aus und legen Sie **UnifiedAuditLogIngestionEnabled** auf _true_ fest:
+1. To enable the Audit log, run the **Set-AdminAuditLogConfig** cmdlet and set the **UnifiedAuditLogIngestionEnabled** to _true_:
 
     ```powershell
     Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true
     ```
 
-1. Um zu überprüfen, ob Audit aktiviert ist, führen Sie das Cmdlet **Get-AdminAuditLogConfig** erneut aus:
+1. To verify that Audit is enabled, run the **Get-AdminAuditLogConfig** cmdlet again:
 
     ```powershell
     Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled
     ```
 
-1. _UnifiedAuditLogIngestionEnabled_ sollte _true_ zurückgeben, damit man weiß, dass Audit aktiviert ist.
-
-<!---
-
-1. In Microsoft Edge, navigate to the Microsoft Purview portal, `https://purview.microsoft.com`, and log in.
-
-1. A message about the new Microsoft Purview portal will appear on the screen. Select the option to agree with the terms of data flow disclosure and the privacy statement, then select **Try now**.
-
-    ![Screenshot showing the Welcome to the new Microsoft Purview portal screen.](../Media/welcome-purview-portal.png)
-
-1. Select **Solutions** from the left sidebar, then select **Audit**.
-
-1. On the **Search** page, select the **Start recording user and admin activity** bar to enable audit logging.
-
-    ![Screenshot showing the Start recording user and admin activity button.](../Media/enable-audit-button.png)
-
-1. Once you select this option, the blue bar should disappear from this page.
+1. _UnifiedAuditLogIngestionEnabled_ should return _true_ to let you know Audit is enabled.
 
 -->
+
+Sie haben die Überwachung in Microsoft 365 erfolgreich aktiviert.
 
 ## Aufgabe 2 - Festlegen von Benutzerkennwörtern für Lab-Übungen
 
@@ -147,17 +149,29 @@ In dieser Aufgabe aktivieren Sie die Geräteeinbindung für Ihr Unternehmen.
 
 Sie haben nun die Geräteeinbindung aktiviert und können damit beginnen, Geräte einzubinden, die mit Endpoint DLP-Richtlinien geschützt werden sollen. Die Aktivierung der Funktion kann bis zu 30 Minuten dauern.
 
-## Aufgabe 4 - Aktivierung der Analyse von Insiderrisiken
+## Aufgabe 4 – Aktivierung der Insider-Risikoanalyse und Datenfreigabe
 
-In dieser Aufgabe aktivieren Sie die Analysen für das Insider-Risikomanagement.
+In dieser Aufgabe aktivieren Sie Analysen und die gemeinsame Nutzung von Daten für das Insider-Risikomanagement.
 
 1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft Purview angemeldet sein.
 
 1. Navigieren Sie in Microsoft Purview zu **Einstellungen** > **Insider-Risikomanagement** > **Analysen**.
 
-1. Schalten Sie **Analysen** auf **Ein** und wählen Sie dann **Speichern**.
+1. Schalten Sie diese Einstellungen auf **Ein** um:
 
-Sie haben die Analysen für das Insider-Risikomanagement aktiviert.
+   - **Erkenntnisse auf Mandantenebene anzeigen**
+
+   - **Erkenntnisse auf Benutzerebene anzeigen**
+
+1. Wählen Sie unten auf der Seite **Speichern** aus.
+
+1. Wählen Sie im linken Navigationsbereich **Datenfreigabe**.
+
+1. Schalten Sie im Abschnitt Datenfreigabe die Option **Benutzer-Risikodetails mit anderen Sicherheitslösungen teilen** auf **Ein**.
+
+1. Wählen Sie unten auf der Seite **Speichern** aus.
+
+Sie haben die Analyse und Datenfreigabe für das Insider-Risikomanagement aktiviert.
 
 ## Aufgabe 5 - Initialisieren von Microsoft Defender XDR
 

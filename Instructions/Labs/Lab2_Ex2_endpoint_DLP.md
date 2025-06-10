@@ -19,7 +19,7 @@ Joni Sherman, der neu eingestellte Informationssicherheitsadministrator bei Cont
 
 In dieser Aufgabe werden Sie ein Windows 11-Gerät einbinden, damit es für den Schutz durch Endpunkt-DLP-Richtlinien bereit ist.
 
-1. Melden Sie sich bei **Client 2 VM (SC-401-CL2)** im **SC-401-cl1\admin** Konto an.
+1. Melden Sie sich bei **Client 2 VM (SC-401-CL2)** als Admin beim **SC-401-cl2\admin**-Konto an.
 
 1. Öffnen Sie Microsoft Edge, navigieren Sie zu **`https://purview.microsoft.com`** und melden Sie sich beim Microsoft Purview-Portal als **Joni Sherman** an. Melden Sie sich als `JoniS@WWLxZZZZZZ.onmicrosoft.com` an (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die Sie von Ihrem Hosting-Anbieter für die Übung bereitgestellt haben). Das Passwort von Joni wurde in einer früheren Übung festgelegt.
 
@@ -65,7 +65,7 @@ Sie haben das Gerät erfolgreich eingebunden und mit Microsoft Entra ID verbunde
 
 In dieser Aufgabe erstellen Sie eine DLP-Richtlinie, die die Übertragung sensibler Daten auf USB-Laufwerke blockiert. Dadurch wird das Risiko verringert, dass Daten ohne Berechtigung außer Haus gebracht werden.
 
-1. Melden Sie sich bei Client 1 VM (SC-401-CL1) im SC-401-cl1\admin-Konto an.
+1. Melden Sie sich bei der VM „Client 1“ (SC-401-CL1) mit dem Konto „SC-401-cl1\admin“ an.
 
 1. Sie sollten sich immer noch auf der Seite **Geräte** im Microsoft Purview-Portal befinden und als Joni Sherman angemeldet sein.
 

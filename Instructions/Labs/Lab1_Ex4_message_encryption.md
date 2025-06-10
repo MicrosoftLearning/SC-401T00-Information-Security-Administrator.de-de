@@ -24,6 +24,14 @@ In dieser Aufgabe überprüfen Sie die richtige Azure RMS-Funktionalität Ihres 
 
 1. Öffnen Sie PowerShell, indem Sie mit der rechten Maustaste auf die Schaltfläche Start in der Taskleiste klicken und **Terminal** auswählen.
 
+1. Führen Sie das Cmdlet **Install Module** im Terminalfenster aus, um die neueste **Exchange Online PowerShell**-Modulversion zu installieren:
+
+    ```powershell
+    Install-Module ExchangeOnlineManagement
+    ```
+
+1. Bestätigen Sie den Sicherheitsdialog „Nicht vertrauenswürdiges Repository" mit **Y** für Ja und drücken Sie die **Eingabetaste**.  Dieser Vorgang nimmt einige Zeit in Anspruch.
+
 1. Führen Sie das Cmdlet **Connect-ExchangeOnline** aus, um das Exchange Online PowerShell-Modul zu verwenden und eine Verbindung zu Ihrem Mandanten herzustellen:
 
     ```powershell
@@ -93,6 +101,8 @@ Sie haben die Anbieter sozialer Identitäten erfolgreich deaktiviert und damit s
 ## Aufgabe 3 - Validieren des Standard-Branding-Verhaltens
 
 Sie müssen bestätigen, dass externen Empfängern kein Dialogfeld mit sozialen IDs angezeigt wird, wenn sie eine mit Office 365 Message Encryption geschützte Nachricht von Benutzenden Ihres Mandanten empfangen und sie jederzeit den OTP für den Zugriff auf den verschlüsselten Inhalt verwenden müssen.
+
+> [!alert] Die externe E-Mail-Zustellung kann in einigen Lab-Umgebungen blockiert sein. Diese Aufgabe wird möglicherweise nicht wie erwartet abgeschlossen.
 
 1. Sie sollten immer noch bei Ihrer Client 1 VM (SC-401-CL1) als **SC-401-CL1\admin** angemeldet sein.
 
@@ -187,6 +197,8 @@ Sie haben eine Transportregel konfiguriert, die sicherstellt, dass E-Mails aus d
 ## Aufgabe 5 - Validieren des benutzerdefinierten Branding-Verhaltens
 
 Um die neue benutzerdefinierte Konfiguration zu validieren, müssen Sie erneut das Konto von Lynne Robbins verwenden, die Mitglied des Finanzteams ist.
+
+> [!alert] Externe E-Mail-Einschränkungen verhindern möglicherweise, dass diese Nachricht empfangen wird. Das Branding wird möglicherweise nicht wie erwartet angezeigt.
 
 1. Gehen Sie zurück zu **Microsoft Edge** mit dem InPrivate Outlook im Webfenster, wo Sie immer noch als **Lynne Robbins** angemeldet sein sollten.
 

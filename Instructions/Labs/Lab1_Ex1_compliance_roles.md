@@ -62,8 +62,6 @@ In dieser Aufgabe melden Sie sich als Joni Sherman an, um das Microsoft Purview-
 
 1. Auf dem Bildschirm erscheint eine Meldung über das neue Microsoft Purview-Portal. Wählen Sie **Erste Schritte**, um Zugriff auf das neue Portal zu erhalten.
 
-    ![Screenshot des Bildschirms „Willkommen im neuen Microsoft Purview-Portal“.](../Media/welcome-purview-portal.png)
-
 1. Machen Sie sich mit dem neuen Microsoft Purview-Portal vertraut. Wenn Sie fertig sind, lassen Sie das Browserfenster geöffnet.
 
 Sie haben erfolgreich zum Konto von Joni Sherman gewechselt und können nun die Übung starten.

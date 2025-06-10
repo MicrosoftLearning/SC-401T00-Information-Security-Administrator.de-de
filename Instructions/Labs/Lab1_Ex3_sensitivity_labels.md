@@ -60,7 +60,7 @@ In dieser Aufgabe werden Sie eine übergeordnete Vertraulichkeitsbezeichnung fü
 
 1. Wählen Sie **Weiter** aus.
 
-1. Wählen Sie auf der Seite **Definieren eines Geltungsbereichs für diese Bezeichnung** die Option **Elemente** aus und wählen Sie dann **Dateien** und **E-Mails** aus. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
+1. Wählen Sie auf der Seite **Definieren Sie den Geltungsbereich für diese Kennzeichnung** **Dateien** und **E-Mails**. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
 
 1. Wählen Sie **Weiter** aus.
 
@@ -93,7 +93,7 @@ Nachdem Sie nun eine Basiskennzeichnung haben, werden Sie eine Unterbezeichnung 
 
 1. Wählen Sie **Weiter** aus.
 
-1. Wählen Sie auf der Seite **Definieren eines Geltungsbereichs für diese Bezeichnung** die Option **Elemente** aus und wählen Sie dann **Dateien** und **E-Mails** aus. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
+1. Wählen Sie auf der Seite **Definieren Sie den Geltungsbereich für diese Kennzeichnung** **Dateien** und **E-Mails**. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
 
 1. Wählen Sie **Weiter** aus.
 
@@ -163,7 +163,7 @@ Sie veröffentlichen nun die Vertraulichkeitsbezeichnungen von Intern und HR, so
 
 1. Auf der Seite **Standardeinstellungen für Besprechungen und Kalenderereignisse** wählen Sie **Weiter**.
 
-1. Auf der Seite **Standardeinstellungen für Power BI Content** wählen Sie **Weiter**.
+1. Klicken Sie auf der Seite **Standardeinstellungen für Fabric- und Power BI-Inhalte** auf **Weiter**.
 
 1. Auf der Seite **Benennen Sie Ihre Richtlinie**, geben Sie ein:
 
@@ -202,7 +202,7 @@ In dieser Aufgabe erstellen Sie eine Vertraulichkeitsbezeichnung für Finanzdate
 
 1. Wählen Sie **Weiter** aus.
 
-1. Wählen Sie auf der Seite **Definieren eines Geltungsbereichs für diese Bezeichnung** die Option **Elemente** aus und wählen Sie dann **Dateien** und **E-Mails** aus. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
+1. Wählen Sie auf der Seite **Definieren Sie den Geltungsbereich für diese Kennzeichnung** **Dateien** und **E-Mails**. Wenn das Kontrollkästchen für **Besprechungen** aktiviert ist, stellen Sie sicher, dass es abgewählt ist.
 
 1. Wählen Sie **Weiter** aus.
 
@@ -262,9 +262,9 @@ In dieser Aufgabe erstellen Sie eine Vertraulichkeitsbezeichnung für Finanzdate
 
 Sie haben erfolgreich eine Vertraulichkeitsbezeichnung für Finanzdaten erstellt und eine Richtlinie für die automatische Bezeichnung konfiguriert, um Inhalte zu erkennen und zu kennzeichnen, die vertrauliche Finanzdaten enthalten.
 
-## Aufgabe 6 - Erstellung und Veröffentlichung einer DKE-Kennzeichnung für in hohem Maße vertrauliche Inhalte
+## Aufgabe 6 – Erstellung und Veröffentlichung einer DKE-Kennzeichnung für vertrauliche Inhalte
 
-In dieser Aufgabe erstellen Sie eine Unterbezeichnung unter der integrierten Kennzeichnung Streng vertraulich. Diese Unterbezeichnung verwendet Double Key Encryption (DKE) und dynamische Wasserzeichen, um sensible Inhalte zu schützen, auf die nur die Rechtsabteilung Zugriff hat. Sie werden auch eine Bezeichnungsrichtlinie konfigurieren, die eine Begründung für die Herabstufung der Kennzeichnung erfordert.
+In dieser Aufgabe erstellen Sie eine Unterbezeichnung unter der Bezeichnung „Intern“. Diese Unterbezeichnung verwendet Double Key Encryption (DKE) und dynamische Wasserzeichen, um sensible Inhalte zu schützen, auf die nur die Rechtsabteilung Zugriff hat. Sie werden auch eine Bezeichnungsrichtlinie konfigurieren, die eine Begründung für die Herabstufung der Kennzeichnung erfordert.
 
 1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) als **SC-401-cl1\admin**-Konto angemeldet sein.
 
@@ -272,7 +272,7 @@ In dieser Aufgabe erstellen Sie eine Unterbezeichnung unter der integrierten Ken
 
 1. Wählen Sie im Microsoft Purview-Portal **Lösungen** > **Informationsschutz** > **Vertraulichkeitsbezeichnungen**.
 
-1. Auf der Seite **Vertraulichkeitsbezeichnungen** finden Sie die Kennzeichnung **Streng vertraulich**. Wählen Sie die vertikalen Auslassungspunkte (**...**), dann wählen Sie **+ Unterbezeichnung erstellen** aus dem Dropdownmenü.
+1. Auf der Seite **Vertraulichkeitsbezeichnungen** finden Sie die Vertraulichkeitsbezeichnung **Intern**. Wählen Sie die vertikalen Auslassungspunkte (**...**), dann wählen Sie **+ Unterbezeichnung erstellen** aus dem Dropdownmenü.
 
 1. Geben Sie auf der Seite **Basisdetails für diese Bezeichnung bereitstellen** Folgendes ein:
 
@@ -423,7 +423,7 @@ Da die Kennzeichnungsprüfung nun aktiviert ist, erstellen Sie eine Dateirichtli
 
       - Aktivieren Sie das Kontrollkästchen für **Vertraulichkeitsbezeichnung anwenden**
 
-      - Wählen Sie **Allgemein-Jeder (ohne Einschränkung)** aus der Dropdown-Liste
+      - Wählen Sie **Streng vertraulich – Projekt Falcon** aus der Dropdown-Liste aus.
 
 1. Wählen Sie **Erstellen**, um die Erstellung der Dateirichtlinie zu beenden.
 
