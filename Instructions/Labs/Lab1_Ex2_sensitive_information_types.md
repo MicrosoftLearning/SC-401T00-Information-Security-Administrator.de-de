@@ -78,8 +78,6 @@ In dieser Aufgabe erstellen Sie einen neuen benutzerdefinierten sensiblen Inform
 
 1. Überprüfen Sie auf der Seite **Einstellungen überprüfen und fertigstellen** die Einstellungen, und wählen Sie **Erstellen** aus. Wenn sie erfolgreich erstellt wurde, wählen Sie **Fertig** aus.
 
-1. Melden Sie sich von Jonis Konto ab, indem Sie das Profilbild von Joni Sherman oben rechts auswählen. Wählen Sie **Abmelden**, und schließen Sie dann das Browserfenster.
-
 Sie haben erfolgreich einen neuen sensiblen Informationstyp erstellt, um Mitarbeitende-IDs im Muster von drei Großbuchstaben, sechs Zahlen und den Schlüsselwörtern 'Mitarbeitender' oder 'IDs' innerhalb eines Bereichs von 100 Zeichen zu identifizieren.
 
 ## Aufgabe 2 - Ändern des Konfidenzniveaus zur Verringerung falsch positiver Ergebnisse
@@ -109,6 +107,8 @@ Sie haben Berichte empfangen, dass einige Dokumente, die IDs mitarbeitender Pers
 1. Wählen Sie **Weiter**, bis Sie die Seite **Einstellungen überprüfen und beenden** erreichen.
 
 1. Wählen Sie **Speichern** und dann **Erledigt**, um Ihren Typ vertraulicher Informationen zu aktualisieren.
+
+1. Melden Sie sich von Jonis Konto ab, indem Sie das Profilbild von Joni Sherman oben rechts auswählen. Wählen Sie **Abmelden**, und schließen Sie dann das Browserfenster.
 
 Sie haben das Konfidenzniveau erfolgreich gesenkt, um die Empfindlichkeit Ihrer benutzerdefinierten SIT zu erhöhen und sicherzustellen, dass Dokumente mit teilweise übereinstimmendem Inhalt mit größerer Wahrscheinlichkeit gekennzeichnet werden.
 

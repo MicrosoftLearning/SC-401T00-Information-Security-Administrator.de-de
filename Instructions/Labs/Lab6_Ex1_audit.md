@@ -86,7 +86,7 @@ In dieser Aufgabe konfigurieren Sie eine Richtlinie zur Aufbewahrung von Überwa
 
 1. Wählen Sie **Richtlinien** in der linken Seitenleiste.
 
-1. Wählen Sie auf der Seite **Richtlinien** die Option **Neue Richtlinie zur Aufbewahrung von Audits**.
+1. Wählen Sie auf der Seite **Richtlinien** die Option **Überwachungs-Aufbewahrungsrichtlinie erstellen** aus.
 
 1. Geben Sie auf dem Bedienfeld **Neue Richtlinie zur Aufbewahrung von Audits** ein:
 

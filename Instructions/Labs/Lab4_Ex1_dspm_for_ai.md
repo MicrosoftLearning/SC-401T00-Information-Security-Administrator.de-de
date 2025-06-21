@@ -20,7 +20,7 @@ Sie sind Joni Sherman, der Informationssicherheitsadministrator von Contoso Ltd.
 
 1. Verwenden Sie DSPM for AI, um eine DLP-Richtlinie für generative KI-Sites zu erstellen.
 1. Erstellen Sie eine Richtlinie für Insiderrisiken, um riskante KI-Interaktionen zu erkennen
-1. (Optional) Blockieren des Zugriffs von Copilot auf gekennzeichnete Inhalte
+1. Blockieren des Zugriffs von Copilot auf gekennzeichnete Inhalte
 1. Führen Sie eine Datenbewertung durch, um nicht gekennzeichnete Inhalte zu erkennen.
 
 ## Aufgabe 1 - Verwendung von DSPM for AI zur Erstellung einer DLP-Richtlinie für generative KI- Websites
@@ -55,7 +55,8 @@ Um das Risiko von Datenverlusten durch KI-Assistenten zu verringern, starten Sie
 
 1. Überprüfen Sie die Konfiguration der von DSPM für AI erstellten Regel:
    - Unter **Bedingungen** ist zu beachten, welche Typen vertraulicher Informationen enthalten sind und dass die Regel **Adaptiver Schutz** auf der Grundlage eines erhöhten Risikos verwendet.
-   - Stellen Sie unter **Aktionen** sicher, dass **Domänen- und Browseraktivitäten** für **Generative KI-Webseiten** auf **Blockieren mit Außerkraftsetzung** festgelegt ist.
+   - Wählen Sie unter **Aktionen** sowohl für die Aktivität „Hochladen“ als auch für die Aktivität „Einfügen“ neben **Einschränkungen für sensible Dienstdomänen-Gruppen** die Option **Bearbeiten** aus.
+   - Stellen Sie in der Konfiguration der Dienstdomänengruppe sicher, dass **Generative KI-Websites** auf **Mit Überschreibung blockieren** festgelegt ist.
 
 1. Wählen Sie **Abbrechen**, um den Regeleditor ohne Änderungen zu beenden.
 
@@ -102,13 +103,13 @@ Bestätigen Sie, dass das auslösende Ereignis **Benutzerkonto von Microsoft Ent
 
 Sie haben eine Richtlinie erstellt, die riskante KI-Interaktionen erkennt, einschließlich Prompts und Antworten, um frühe Anzeichen für riskantes Benutzenden-Verhalten zu erkennen.
 
-## Aufgabe 3 - (Optional) Blockieren des Zugriffs von Copilot auf gekennzeichnete Inhalte
+## Aufgabe 3 – Blockieren des Zugriffs von Copilot auf gekennzeichnete Inhalte
 
 Sie können das Risiko weiter verringern, indem Sie Copilot daran hindern, durch Vertraulichkeitsbezeichnungen geschützte Inhalte zu verarbeiten oder darauf zu antworten.
 
 1. Navigieren Sie in Microsoft Purview zu **DSPM für AI**, indem Sie **Lösungen** > **DSPM für AI** > **Empfehlungen** auswählen.
 
-1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird**.
+1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in Microsoft 365 Copilot und Agents verwiesen wird (Vorschau)** aus.
 
 1. Überprüfen Sie die in dieser Empfehlung bereitgestellten Hinweise.
 
@@ -129,9 +130,9 @@ Sie können das Risiko weiter verringern, indem Sie Copilot daran hindern, durch
 
    - **Name**: `Prevent Copilot from accessing labeled data`
    - Wählen Sie unter **Bedingungen** die Option **Bedingung hinzufügen** > **Inhalt enthält** > **Vertraulichkeitsbezeichnungen**. Fügen Sie diese Vertraulichkeitsbezeichnungen hinzu:
-     - `Internal`
-     - `Confidential`
-     - `Highly Confidential`
+     - `Trusted People`
+     - `Project - Falcon`
+     - `Financial Data`
    - Wählen Sie **Hinzufügen** aus.
    - Wählen Sie unter **Aktionen** **Aktion hinzufügen** > **Copilot an der Verarbeitung von Inhalten hindern (Vorschau)**
    - Wählen Sie **Speichern** am unteren Rand des Flyouts **Regel erstellen**.
@@ -144,7 +145,7 @@ Sie können das Risiko weiter verringern, indem Sie Copilot daran hindern, durch
 
 1. Kehren Sie zu **DSPM für KI-Empfehlungen** zurück, indem Sie **Lösungen** > **DSPM für KI** > **Empfehlungen** wählen.
 
-1. Markieren Sie die Empfehlung **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird** und wählen Sie **Als abgeschlossen markieren**.
+1. Wählen Sie die Empfehlung **Schützen Sie sensible Daten, auf die in Microsoft 365 Copilot und Agents verwiesen wird (Vorschau)** aus und wählen Sie **Als abgeschlossen markieren**.
 
 Sie haben eine DLP-Richtlinie erstellt, die verhindert, dass gekennzeichnete Inhalte in Copilot-Prompts und -Antworten verwendet werden.
 
@@ -152,9 +153,9 @@ Sie haben eine DLP-Richtlinie erstellt, die verhindert, dass gekennzeichnete Inh
 
 Um mögliche Lücken in der Abdeckung der Bezeichnungen zu erkennen, führen Sie eine Datenrisikobewertung durch, um Dateien ohne Vertraulichkeitsbezeichnungen zu identifizieren, auf die Copilot zugreifen könnte.
 
-1. Wählen Sie unter **DSPM für AI** die Empfehlung mit dem Titel **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird**.
+1. Wählen Sie unter **DSPM für KI** die Empfehlung mit dem Titel **Schützen Sie sensible Daten, auf die in Copilot- und Agent-Antworten verwiesen wird**.
 
-1. Überprüfen Sie im Bereich **Schützen Sie sensible Daten, auf die in den Antworten von Copilot und Agents verwiesen wird** die Zusammenfassung und wählen Sie dann **Zu den Bewertungen wechseln**.
+1. Überprüfen Sie im Bereich **Schützen Sie sensible Daten, auf die in Copilot- und Agent-Antworten verwiesen wird** die Zusammenfassung und wählen Sie dann **Zu Einschätzungen wechseln**.
 
 1. Auf der Seite **Datenrisikobewertungen** wählen Sie **Benutzerdefinierte Bewertung erstellen**.
 

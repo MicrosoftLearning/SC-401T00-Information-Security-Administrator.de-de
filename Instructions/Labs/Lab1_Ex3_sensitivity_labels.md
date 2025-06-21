@@ -361,7 +361,7 @@ Sie haben erfolgreich eine Unterbezeichnung mithilfe von Double Key Encryption m
 
 ## Aufgabe 7 - Aktivieren der Microsoft Purview-Integration in Defender for Cloud-Apps
 
-In dieser Aufgabe aktivieren Sie die Microsoft Purview-Integration in Microsoft Defender for Cloud-Apps. Dies ermöglicht es Defender, neue Dateien auf Microsoft Purview Vertraulichkeitsbezeichnungen zu prüfen und den Inhalt auf der Grundlage dieser Kennzeichnungen zu untersuchen.
+In dieser Aufgabe aktivieren Sie die Microsoft Purview-Integration in Microsoft Defender for Cloud Apps und schalten die Dateiüberwachung ein. Dadurch kann Defender neue und geänderte Dateien auf Vertraulichkeitsbezeichnungen von Microsoft Purview überprüfen, Inhalte anhand dieser Bezeichnungen untersuchen und Dateien überwachen, damit Dateirichtlinien angewendet werden können.
 
 1. Sie sollten immer noch bei Client 1 VM (SC-401-CL1) als **SC-401-CL1\admin** angemeldet sein, und Sie sollten immer noch als Joni Sherman angemeldet sein.
 
@@ -385,11 +385,17 @@ In dieser Aufgabe aktivieren Sie die Microsoft Purview-Integration in Microsoft 
 
 1. Wählen Sie **Speichern** aus, um die Einstellungen zu übernehmen.
 
-Sie haben Defender for Cloud Apps aktiviert, um Dateien auf Vertraulichkeitsbezeichnungen von Microsoft Purview zu erkennen und zu scannen.
+1. Wählen Sie im linken Bereich unter dem Abschnitt **Informationsschutz** die Option **Dateien** aus.
+
+1. Wählen Sie auf der Seite **Dateien** die Option **Dateiüberwachung aktivieren**.
+
+1. Wählen Sie **Speichern** aus, um die Einstellungen zu übernehmen.
+
+Sie haben Defender for Cloud Apps aktiviert, um Dateien auf Vertraulichkeitsbezeichnungen zu überprüfen und Dateien zu überwachen, damit Dateirichtlinien Governance-Maßnahmen bewerten und anwenden können.
 
 ## Aufgabe 8 - Erstellen einer Dateirichtlinie zur automatischen Kennzeichnung extern freigegebener Dateien
 
-Da die Kennzeichnungsprüfung nun aktiviert ist, erstellen Sie eine Dateirichtlinie, die eine allgemeine Vertraulichkeitsbezeichnung auf alle neuen Dateien anwendet, die außerhalb Ihres Unternehmens freigegeben werden.
+Nachdem das Scannen von Bezeichnungen aktiviert wurde, erstellen Sie eine Dateirichtlinie, die die Vertraulichkeitsbezeichnung **Streng vertraulich – Projekt – Falcon** auf Dateien in den Mark 8-Projektordnern anwendet, die außerhalb Ihrer Organisation freigegeben sind. Diese Richtlinie wird als DLP kategorisiert, da sie vertrauliche Daten vor unbeabsichtigter Gefährdung schützt.
 
 1. Navigieren Sie in **Microsoft Defender** zu **Cloud Apps** > **Richtlinien** > **Richtlinienverwaltung**.
 
@@ -399,11 +405,19 @@ Da die Kennzeichnungsprüfung nun aktiviert ist, erstellen Sie eine Dateirichtli
 
 1. Konfigurieren Sie auf der Seite **Datei-Richtlinie erstellen**:
 
-   - **Richtlinienname**: `Auto-label externally shared files`
+   - **Richtlinienname**: `Auto-label external sharing for Project Falcon files`
 
-   - **Schweregrad der Richtlinie**: **Niedrig**
+   - **Schweregrad der Richtlinie**: **Hoch**
 
    - **Kategorie**: **DLP**
+
+   - **Übernehmen für**: **Ausgewählte Ordner**
+
+      - Wählen Sie **Ordner hinzufügen** und suchen Sie dann im Feld **Dateiname** nach `Project`.
+
+      - Aktivieren Sie das Kontrollkästchen für die SharePoint-Ordner **Mark 8-Projektteam-Notebook** und **Mark 8-Projektteam**.
+
+      - Wählen Sie **Fertig**, um das Fenster **Ordner auswählen** zu schließen.
 
    - Im Abschnitt **Dateien, die auf alle der folgenden Punkte zutreffen**:
 
@@ -417,14 +431,14 @@ Da die Kennzeichnungsprüfung nun aktiviert ist, erstellen Sie eine Dateirichtli
 
       - Aktivieren Sie das Kontrollkästchen für **Vertraulichkeitsbezeichnung anwenden**
 
-      - Wählen Sie in der Auswahlliste **Allgemein-Jeder (ohne Einschränkung)**
+      - Wählen Sie in der Dropdown-Liste **Streng vertraulich – Projekt – Falcon** aus
 
    - Wiederholen Sie den gleichen Vorgang für **Microsoft SharePoint Online**
 
       - Aktivieren Sie das Kontrollkästchen für **Vertraulichkeitsbezeichnung anwenden**
 
-      - Wählen Sie **Streng vertraulich – Projekt Falcon** aus der Dropdown-Liste aus.
+      - Wählen Sie **Streng vertraulich – Projekt – Falcon** aus der Dropdown-Liste aus
 
 1. Wählen Sie **Erstellen**, um die Erstellung der Dateirichtlinie zu beenden.
 
-Sie haben eine Dateirichtlinie erstellt, die eine allgemeine Vertraulichkeitsbezeichnung auf extern in SharePoint und OneDrive freigegebene Dateien anwendet. Sobald eine passende Datei erkannt wird, wendet Defender for Cloud Apps die Kennzeichnung automatisch an.
+Sie haben eine Dateirichtlinie erstellt, die eine Bezeichnung für hohe Vertraulichkeit auf extern freigegebene Dateien in den Mark 8-Projektordnern in SharePoint und OneDrive anwendet. Sobald eine passende Datei erkannt wird, wendet Defender for Cloud Apps die Kennzeichnung automatisch an.

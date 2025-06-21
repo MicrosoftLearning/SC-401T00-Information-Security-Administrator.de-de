@@ -12,7 +12,7 @@ Sie sind Joni Sherman, der Informationssicherheitsadministrator von Contoso Ltd.
 
 1. Zuweisen einer Richtlinie für Insiderrisiken zum adaptiven Schutz
 1. Konfigurieren der Einstellungen für den adaptiven Schutz für Ihre DLP-Richtlinie
-1. (Optional) Konfigurieren des bedingten Zugriffs mit adaptivem Schutz
+1. Konfigurieren des bedingten Zugriffs mit adaptivem Schutz
 1. Aktivieren des adaptiven Schutzes
 
 ## Aufgabe 1 - Zuweisen einer Richtlinie für Insider-Risiken zum adaptiven Schutz
@@ -60,7 +60,7 @@ Da der adaptive Schutz nun mit Ihrer Richtlinie für Insider-Risiken verknüpft 
 
 Sie haben Ihre DLP-Richtlinie aktualisiert, um die Freigabe zu blockieren, wenn ein erhöhtes Insider-Risiko besteht, und so den Datenschutz auf der Grundlage des Verhaltens des Benutzenden zu stärken.
 
-## Aufgabe 3 - (Optional) Konfigurieren Sie den bedingten Zugriff mit adaptivem Schutz
+## Aufgabe 3 – Konfigurieren des bedingten Zugriffs mit adaptivem Schutz
 
 Um eine weitere Ebene der Erzwingung hinzuzufügen, können Sie Insider-Risikostufen verwenden, um den Zugriff mithilfe der Zugangskontrolle zu beschränken. In dieser Aufgabe werden Sie eine Richtlinie erstellen, die den Zugriff für Benutzende mit einer erhöhten Risikostufe sperrt.
 
@@ -68,11 +68,15 @@ Um eine weitere Ebene der Erzwingung hinzuzufügen, können Sie Insider-Risikost
 
 1. Öffnen Sie ein neues Microsoft Edge-Fenster und navigieren Sie zum **Microsoft Entra Admin Center** unter `https://entra.microsoft.com`. Melden Sie sich als **MOD-Administrator**, `admin@WWLxZZZZZZ.onmicrosoft.com` an (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die Sie von Ihrem Anbieter für das Hosting von Übungen bereitgestellt haben). Das Admin-Passwort sollte von Ihrem Provider für die Übung bereitgestellt werden.
 
-1. Auf der Seite **Weitere Informationen erforderlich** wählen Sie **Weiter**.
-
-1. Befolgen Sie auf der Seite **Sichern Sie Ihr Konto** die Prompts, um die Multi-Faktor-Authentifizierung (MFA) mithilfe von Microsoft Authenticator oder einer anderen Authentifizierungs-App festzulegen.
-
-   Nach Abschluss der MFA-Einrichtung werden Sie zum **Microsoft Entra Admin Center** weitergeleitet.
+> [!note] **Hinweis**: In einigen Mandanten wird bei der Anmeldung möglicherweise ein Prompt zur Durchsetzung der Portal-MFA angezeigt. Wenn diese Aufforderung angezeigt wird:
+> - Wählen Sie **MFA verschieben**, um die Einrichtung der MFA vorübergehend zu verzögern.
+>
+>   ![Screenshot, der die Option zur Verschiebung der MFA anzeigt.](../Media/postpone-mfa.png)
+> - Wählen Sie **Verschiebung bestätigen** aus.
+>
+> - Wählen Sie **Anmeldung ohne MFA fortsetzen** aus, um auf Microsoft Entra zuzugreifen.
+>
+> Dadurch wird die MFA-Erzwingung für den Mandanten verschoben, und Sie können mit dem Lab fortfahren.
 
 1. Navigieren Sie im Microsoft Entra Admin Center zu **Schutz** > **Bedingter Zugriff** > **Richtlinien**.
 
@@ -119,7 +123,7 @@ In dieser letzten Aufgabe werden Sie den adaptiven Schutz aktivieren, damit das 
 
    - Auf der Registerkarte **Insider-Risikostufen** wird die Richtlinie **Datenlecks schnell** ausgewählt.
 
-   - Auf der Registerkarte **Bedingter Zugriff** ist die Richtlinie **Jeden Zugriff bei erhöhtem Risiko sperren** sichtbar (optional).
+   - Auf der Registerkarte **Bedingter Zugriff** wird die Richtlinie **Alle Zugriffe für erhöhtes Risiko blockieren** angezeigt.
 
    - Auf der Registerkarte **Verhinderung von Datenverlusten** ist die Richtlinie **DLP - Kreditkartenschutz** aufgeführt.
 

@@ -22,7 +22,7 @@ In dieser Aufgabe überprüfen Sie die richtige Azure RMS-Funktionalität Ihres 
 
 1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein.
 
-1. Öffnen Sie PowerShell, indem Sie mit der rechten Maustaste auf die Schaltfläche Start in der Taskleiste klicken und **Terminal** auswählen.
+1. Öffnen Sie PowerShell, indem Sie mit der rechten Maustaste auf die Schaltfläche „Start“ in der Taskleiste klicken und **Terminal (Admin)** auswählen.
 
 1. Führen Sie das Cmdlet **Install Module** im Terminalfenster aus, um die neueste **Exchange Online PowerShell**-Modulversion zu installieren:
 

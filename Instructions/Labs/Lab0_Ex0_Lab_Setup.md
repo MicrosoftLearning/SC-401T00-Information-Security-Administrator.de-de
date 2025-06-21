@@ -14,14 +14,15 @@ Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. 
 
 # Aufbau der Übung - Bereiten Sie Ihre Übungsumgebung für die Verwaltung vor
 
-In dieser Übung konfigurieren Sie Ihre Umgebung und bereiten sie für Verwaltungsaufgaben vor. Sie aktivieren die erforderlichen Funktionen, legen die administrativen Berechtigungen fest und sorgen für die richtige Konfiguration der wichtigsten Elemente.
+In dieser Übung konfigurieren Sie Ihre Umgebung und bereiten sie für Verwaltungsaufgaben vor. Sie aktivieren erforderliche Features, konfigurieren Berechtigungen und bereiten die Kerndienste für die Verwaltung vor.
 
 **Aufgaben:**
 
-1. Aktivieren der Überwachung im Microsoft Purview-Portal
-1. Festlegen von Benutzerkennwörtern für Lab-Übungen
-1. Aktivieren des Geräte-Onboardings
-1. Aktivieren von Insider-Risikoanalysen
+1. Aktivieren der Überwachung im Microsoft Purview-Portal  
+1. Aktivieren des Geräte-Onboardings  
+1. Aktivierung der Insider-Risikoanalyse und Datenfreigabe  
+1. Festlegen von Benutzerkennwörtern für Lab-Übungen  
+1. Initialisieren von Microsoft Defender XDR
 
 ## Aufgabe 1 - Aktivieren Sie Audit im Microsoft Purview-Portal
 
@@ -53,7 +54,7 @@ In dieser Aufgabe aktivieren Sie die Überwachung im Microsoft Purview-Portal, u
     Install-Module ExchangeOnlineManagement
     ```
 
-1. Confirm the NuGet provider prompt  by typing **Y** for Yes and press **Enter**.
+1. Confirm the NuGet provider prompt by typing **Y** for Yes and press **Enter**.
 
 1. Confirm the Untrusted repository security dialog with **Y** for Yes and press **Enter**.  This process may take some time to complete.
 
@@ -101,13 +102,63 @@ In dieser Aufgabe aktivieren Sie die Überwachung im Microsoft Purview-Portal, u
 
 Sie haben die Überwachung in Microsoft 365 erfolgreich aktiviert.
 
-## Aufgabe 2 - Festlegen von Benutzerkennwörtern für Lab-Übungen
+## Aufgabe 2 – Aktivieren des Geräte-Onboardings
+
+In dieser Aufgabe aktivieren Sie die Geräteeinbindung für Ihr Unternehmen.
+
+1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft 365 angemeldet sein.
+
+1. Navigieren Sie in **Microsoft Edge** zu **`https://purview.microsoft.com`**, um sich bei Microsoft Purview anzumelden, und wählen Sie dann **Einstellungen** in der linken Seitenleiste.
+
+1. Erweitern Sie in der linken Seitenleiste **Geräteeinbindung** und wählen Sie dann **Geräte**.
+
+1. Wählen Sie auf der Seite **Geräte** die Option **Geräteeinbindung einschalten** und wählen Sie dann **Ok**, um die Geräteeinbindung zu aktivieren.
+
+1. Wenn Sie dazu aufgefordert werden, wählen Sie **OK**, um zu bestätigen, dass die Überwachung des Geräts aktiviert ist.
+
+Sie haben nun die Geräteeinbindung aktiviert und können damit beginnen, Geräte einzubinden, die mit Endpoint DLP-Richtlinien geschützt werden sollen. Die Aktivierung der Funktion kann bis zu 30 Minuten dauern.
+
+## Aufgabe 3 – Aktivierung der Insider-Risikoanalyse und Datenfreigabe
+
+In dieser Aufgabe aktivieren Sie Analysen und die gemeinsame Nutzung von Daten für das Insider-Risikomanagement.
+
+1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft Purview angemeldet sein.
+
+1. Navigieren Sie in Microsoft Purview zu **Einstellungen** > **Insider-Risikomanagement** > **Analysen**.
+
+1. Schalten Sie diese Einstellungen auf **Ein** um:
+
+   - **Erkenntnisse auf Mandantenebene anzeigen**
+
+   - **Erkenntnisse auf Benutzerebene anzeigen**
+
+1. Wählen Sie unten auf der Seite **Speichern** aus.
+
+1. Wählen Sie im linken Navigationsbereich **Datenfreigabe**.
+
+1. Schalten Sie im Abschnitt Datenfreigabe die Option **Benutzer-Risikodetails mit anderen Sicherheitslösungen teilen** auf **Ein**.
+
+1. Wählen Sie unten auf der Seite **Speichern** aus.
+
+Sie haben die Analyse und Datenfreigabe für das Insider-Risikomanagement aktiviert.
+
+## Aufgabe 4 – Festlegen von Benutzerkennwörtern für Lab-Übungen
 
 In dieser Aufgabe legen Sie die Passwörter für die Benutzenden fest, die für die Übungen benötigt werden.
 
-1. Melden Sie sich beim virtuellen Client 1 (SC-401-CL1) im **SC-401-CL1\admin** Konto an. Das Passwort sollte von Ihrem Provider für die Übung bereitgestellt werden.
+1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft 365 angemeldet sein.
 
 1. Öffnen Sie **Microsoft Edge** und navigieren Sie zu **`https://admin.microsoft.com`**, um sich im Microsoft 365-Administrationszentrum als MOD-Administrator anzumelden, `admin@WWLxZZZZZZ.onmicrosoft.com` (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die von Ihrem Anbieter des Übungs-Hostings bereitgestellt wird).
+
+> [!note] **Hinweis**: In einigen Mandanten wird bei der Anmeldung möglicherweise ein Prompt zur Durchsetzung der Portal-MFA angezeigt. Wenn diese Aufforderung angezeigt wird:
+> - Wählen Sie **MFA verschieben**, um die Einrichtung der MFA vorübergehend zu verzögern.
+>
+>   ![Screenshot, der die Option zur Verschiebung der MFA anzeigt.](../Media/postpone-mfa.png)
+> - Wählen Sie **Verschiebung bestätigen** aus.
+>
+> - Wählen Sie **Anmeldung ohne MFA fortsetzen** aus, um auf das Admin Center zuzugreifen.
+>
+> Dadurch wird die MFA-Erzwingung für den Mandanten verschoben, und Sie können mit dem Lab fortfahren.
 
 1. Erweitern Sie im linken Navigationsbereich **Benutzende** und wählen Sie dann **Aktive Benutzende**.
 
@@ -133,46 +184,6 @@ In dieser Aufgabe legen Sie die Passwörter für die Benutzenden fest, die für 
 
 Sie haben die Passwörter für Lab-Übungen erfolgreich zurückgesetzt.
 
-## Aufgabe 3 - Aktivieren der Geräteeinbindung
-
-In dieser Aufgabe aktivieren Sie die Geräteeinbindung für Ihr Unternehmen.
-
-1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft 365 angemeldet sein.
-
-1. Navigieren Sie in **Microsoft Edge** zu **`https://purview.microsoft.com`**, um sich bei Microsoft Purview anzumelden, und wählen Sie dann **Einstellungen** in der linken Seitenleiste.
-
-1. Erweitern Sie in der linken Seitenleiste **Geräteeinbindung** und wählen Sie dann **Geräte**.
-
-1. Wählen Sie auf der Seite **Geräte** die Option **Geräteeinbindung einschalten** und wählen Sie dann **Ok**, um die Geräteeinbindung zu aktivieren.
-
-1. Wenn Sie dazu aufgefordert werden, wählen Sie **OK**, um zu bestätigen, dass die Überwachung des Geräts aktiviert ist.
-
-Sie haben nun die Geräteeinbindung aktiviert und können damit beginnen, Geräte einzubinden, die mit Endpoint DLP-Richtlinien geschützt werden sollen. Die Aktivierung der Funktion kann bis zu 30 Minuten dauern.
-
-## Aufgabe 4 – Aktivierung der Insider-Risikoanalyse und Datenfreigabe
-
-In dieser Aufgabe aktivieren Sie Analysen und die gemeinsame Nutzung von Daten für das Insider-Risikomanagement.
-
-1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein und als MOD-Administrator in Microsoft Purview angemeldet sein.
-
-1. Navigieren Sie in Microsoft Purview zu **Einstellungen** > **Insider-Risikomanagement** > **Analysen**.
-
-1. Schalten Sie diese Einstellungen auf **Ein** um:
-
-   - **Erkenntnisse auf Mandantenebene anzeigen**
-
-   - **Erkenntnisse auf Benutzerebene anzeigen**
-
-1. Wählen Sie unten auf der Seite **Speichern** aus.
-
-1. Wählen Sie im linken Navigationsbereich **Datenfreigabe**.
-
-1. Schalten Sie im Abschnitt Datenfreigabe die Option **Benutzer-Risikodetails mit anderen Sicherheitslösungen teilen** auf **Ein**.
-
-1. Wählen Sie unten auf der Seite **Speichern** aus.
-
-Sie haben die Analyse und Datenfreigabe für das Insider-Risikomanagement aktiviert.
-
 ## Aufgabe 5 - Initialisieren von Microsoft Defender XDR
 
 Bei dieser Aufgabe öffnen Sie Microsoft Defender und warten, bis Microsoft Defender XDR die Initialisierung beendet.
@@ -182,6 +193,8 @@ Bei dieser Aufgabe öffnen Sie Microsoft Defender und warten, bis Microsoft Defe
 1. Navigieren Sie in **Microsoft Edge** zu **`https://security.microsoft.com/`**, um Microsoft Defender zu öffnen.
 
 1. Wählen Sie im Navigationsbereich **Untersuchung & Reaktion** > **Incidents & Warnungen** > **Incidents**.
+
+> [!note] **Hinweis**: Der Initialisierungsbildschirm von Microsoft Defender XDR wird je nach Mandant Ihres Labs möglicherweise angezeigt oder nicht. Wenn dies angezeigt wird, können Sie mit anderen Aufgaben fortfahren, während der Vorgang im Hintergrund ausgeführt wird.
 
 1. Es wird eine Meldung angezeigt, dass Microsoft Defender XDR vorbereitet wird. Dieser Vorgang läuft automatisch ab und kann einige Minuten dauern.
 

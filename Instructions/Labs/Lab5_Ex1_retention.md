@@ -22,8 +22,6 @@ Sie sind Joni Sherman, ein Complianceadministrator bei Contoso Ltd. Das Unterneh
 1. Veröffentlichen einer Kennzeichnung für die Aufbewahrung
 1. Erstellen einer Richtlinie zur automatischen Anwendung von Bezeichnungsrichtlinien für die Aufbewahrung
 1. Erstellen Sie eine statische Richtlinie zur Aufbewahrung
-1. Erstellen eines adaptiven Bereichs
-1. Erstellen einer adaptiven Richtlinie zur Aufbewahrung
 1. Wiedererstellen von SharePoint-Inhalten
 
 ## Aufgabe 1 - Erstellen einer Kennzeichnung für die Aufbewahrung
@@ -89,7 +87,7 @@ In dieser Aufgabe veröffentlichen Sie die Kennzeichnung für die Aufbewahrung, 
 1. Auf der Seite **Benennen Sie Ihre Richtlinie** eingeben:
 
     - **Name**: `Sensitive Financial Data Retention`
-    - **Beschreibung:** `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, OneDrive, and Teams.`
+    - **Beschreibung:** `Makes the 'Sensitive Financial Records' label available to users in Exchange, SharePoint, and OneDrive.`
 
 1. Wählen Sie **Weiter** aus.
 
@@ -184,102 +182,102 @@ In dieser Aufgabe erstellen Sie eine statische Richtlinie für die Aufbewahrung 
 
 Sie haben eine statische Richtlinie zu konfiguriert, die Meldungen von Teams drei Jahre lang aufbewahrt, bevor sie automatisch gelöscht werden.
 
-## Aufgabe 5 - Erstellen eines anpassungsfähigen Geltungsbereichs
+<!------ Commenting out until tenant bug issues are resolved
+## Task 5 – Create an adaptive scope
 
-In dieser Aufgabe definieren Sie einen adaptiven Geltungsbereich, der auf Microsoft 365-Gruppen abzielt, die den Führungs- und Betriebsrollen zugeordnet sind.
+In this task, you'll define an adaptive scope that targets Microsoft 365 groups associated with leadership and operations roles.
 
-1. In Microsoft Purview, **Einstellungen** > **Rollen und Geltungsbereiche** > **Adaptive Geltungsbereiche**.
+1. In Microsoft Purview, **Settings** > **Roles and scopes** > **Adaptive scopes**.
 
-1. Auf der Seite **Adaptive Bereiche** wählen Sie **+ Bereich erstellen**.
+1. On the **Adaptive scopes** page select **+ Create scope**.
 
-1. Geben Sie auf der Seite **Benennen Sie Ihren Geltungsbereich für die adaptive Richtlinie** ein:
+1. On the **Name your adaptive policy scope** page enter:
 
     - **Name**: `Leadership and Ops Groups`
-    - **Beschreibung:** `Targets Leadership and Operations M365 groups with privileged access to sensitive data.`
+    - **Description**: `Targets Leadership and Operations M365 groups with privileged access to sensitive data.`
 
-1. Wählen Sie **Weiter** aus.
+1. Select **Next**.
 
-1. Auf der Seite **Admineinheiten zuweisen** wählen Sie **Weiter**.
+1. On the **Assign admin unit** page select **Next**.
 
-1. Wählen Sie auf der Seite **Welchen Typ von Geltungsbereich möchten Sie erstellen?** die Option **Benutzende** und wählen Sie dann **Weiter**.
+1. On the **What type of scope do you want to create?** page select **Users**, then select **Next**.
 
-1. Stellen Sie auf der Seite **Erstellen Sie die Abfrage zur Definition von Benutzendern** im Abschnitt **Benutzerattribute** sicher, dass diese Werte für die Konfiguration der Benutzerattribute ausgewählt sind:
+1. On the **Create the query to define users** page, in the **User attributes** section, ensure these values are selected for the user attribute configuration:
 
-   - Wählen Sie das Dropdown-Menü **Attribut** und dann **Abteilung**.
-   - Lassen Sie den Standardwert **ist gleich** im nächsten Feld stehen
-   - Geben Sie `Leadership` als **Wert** ein
+   - Select the **Attribute** dropdown then select **Department**
+   - Leave the default **is equal to** value in the next field
+   - Enter `Leadership` as the **Value**
 
-1. Fügen Sie ein zweites Attribut hinzu, indem Sie **+ Attribut hinzufügen** auf der Seite **Erstellen Sie die Abfrage zur Definition der Benutzenden** wählen. Konfigurieren Sie in dem neuen Feld unter dem soeben konfigurierten Feld die folgenden Werte:
+1. Add a second attribute by selecting **+ Add attribute** on the **Create the query to define users** page. In the new field under the one we just configured, configure these values:
 
-   - Wählen Sie das Dropdown-Menü für den Standardabfrageoperator und aktualisieren Sie es von Und auf **Oder**.
-   - Wählen Sie das Dropdown-Menü **Attribut** und dann **Abteilung**.
-   - Lassen Sie den Standardwert **ist gleich** im nächsten Feld stehen
-   - Geben Sie `Operations` als **Wert** ein
+   - Select the dropdown for the query operator and update it from And to **Or**
+   - Select the **Attribute** dropdown then select **Department**
+   - Leave the default **is equal to** value in the next field
+   - Enter `Operations` as the **Value**
 
-1. Wählen Sie **Weiter** aus.
+1. Select **Next**.
 
-1. Wählen Sie auf der Seite **Überprüfen und beenden** die Option **Absenden** aus.
+1. On the **Review and finish** page select **Submit**.
 
-1. Sobald Ihr adaptiver Geltungsbereich erstellt ist, wählen Sie **Fertig** auf der Seite **Ihr Geltungsbereich wurde erstellt**.
+1. Once your adaptive scope is created select **Done** on the **Your scope was created** page.
 
-Sie haben einen adaptiven Geltungsbereich erstellt, um die gezielte Aufbewahrung für privilegierte Gruppen im Unternehmen zu unterstützen.
+You've created an adaptive scope to support targeted retention for privileged groups in the organization.
 
-## Aufgabe 6 - Erstellung einer adaptiven Richtlinie zur Aufbewahrung
+## Task 6 – Create an adaptive retention policy
 
-In dieser Aufgabe verwenden Sie den von Ihnen erstellten adaptiven Geltungsbereich, um eine Aufbewahrungsrichtlinie für Microsoft 365-Gruppen mit sensiblen Aufgaben zu konfigurieren.
+In this task, you'll use the adaptive scope you created to configure a retention policy for Microsoft 365 groups with sensitive responsibilities.
 
-1. Navigieren Sie in Microsoft Purview zu **Lösungen** > **Verwaltung des Datenlebenszyklus** > **Richtlinien** >  **policy Aufbewahrungsrichtlinien**.
+1. In Microsoft Purview, navigate to **Solutions** > **Data Lifecycle Management** > **Policies** >  **Retention policies**.
 
-1. Auf der Seite **Aufbewahrungsrichtlinien** wählen Sie **+ Neue Aufbewahrungsrichtlinie**.
+1. On the **Retention policies** page, select **+ New retention policy**.
 
-1. Geben Sie auf der Seite **Benennen Sie Ihre Aufbewahrungsrichtlinie** ein:
+1. On the **Name your retention policy** page enter:
 
     - **Name**: `Privileged Group Retention`
-    - **Beschreibung:** `Retains content from Leadership and Operations groups for 5 years to support audit and investigation.`
+    - **Description**: `Retains content from Leadership and Operations groups for 5 years to support audit and investigation.`
 
-1. Wählen Sie **Weiter** aus.
+1. Select **Next**.
 
-1. Wählen Sie auf der Seite **Richtlinienbereich** **Weiter** aus.
+1. On the **Policy Scope** page select **Next**.
 
-1. Wählen Sie auf der Seite **Wählen Sie den Typ der zu erstellenden Aufbewahrungsrichtlinie** die Option **Adaptiv** und wählen Sie dann **Weiter**.
+1. On the **Choose the type of retention policy to create** page select **Adaptive** then select **Next**.
 
-1. Wählen Sie auf der Seite **Auswahl der Geltungsbereiche und Standorte für adaptive Richtlinien** die Option **+ Geltungsbereiche hinzufügen**.
+1. On the **Choose adaptive policy scopes and locations** page select **+ Add scopes**.
 
-1. Aktivieren Sie im Flyoutbereich **Wählen Sie adaptive Geltungsbereiche** das Kontrollkästchen für **Führungs- und Betriebsgruppen** und wählen Sie dann **Hinzufügen** am unteren Rand des Bereichs.
+1. On the **Choose adaptive policy scopes** flyout panel select the checkbox for **Leadership and Ops Groups** then select **Add** at the bottom of the panel.
 
-1. Zurück auf **Wählen Sie Standorte, um die Richtlinie anzuwenden** aktivieren Sie:
+1. Back on the **Choose locations to apply the policy** enable:
 
-    - Microsoft 365-Gruppenpostfächer und -Websites
-    - Lassen Sie alle anderen Standorte deaktiviert.
+    - Microsoft 365 Group mailboxes & sites
+    - Leave all other locations disabled.
 
-1. Wählen Sie **Weiter** aus.
+1. Select **Next**.
 
-1. Stellen Sie auf der Seite **Entscheiden Sie, ob Sie Inhalte behalten, löschen oder beides** möchten, sicher, dass diese Werte für die Konfiguration der Speicherung festgelegt sind:
+1. On the **Decide if you want to retain content, delete it, or both** page, ensure these values are set for the retention configuration:
 
-   - Wählen Sie **Elemente für einen bestimmten Zeitraum aufbewahren**.
-   - Wählen Sie unter **Elemente für einen bestimmten Zeitraum aufbewahren** aus der Dropdownliste **5 Jahre**.
-   - **Beginnen Sie die Aufbewahrungsfrist basierend auf**: Wann die Elemente zuletzt geändert wurden.
-   - **Am Ende des Aufbewahrungszeitraums**: Elemente automatisch löschen.
+   - Select **Retain items for a specific period**.
+   - Under **Retain items for a specific period**, select **5 years** from the dropdown list
+   - **Start the retention period based on**: When items were last modified
+   - **At the end of the retention period**: Delete items automatically
 
-1. Wählen Sie **Weiter** aus.
+1. Select **Next**.
 
-1. Wählen Sie auf der Seite **Überprüfen und beenden** die Option **Absenden** aus.
+1. On the **Review and finish** page select **Submit**.
 
-1. Wählen Sie **Fertig**, sobald die Richtlinie erstellt ist.
+1. Select **Done** once the policy is created.
 
-Sie haben eine Aufbewahrungsrichtlinie erstellt, die auf Inhalte angewandt wird, die privilegierten Gruppen gehören, und diese fünf Jahre lang aufbewahrt, bevor sie gelöscht werden.
+You've created a retention policy that applies to content owned by privileged groups, retaining it for five years before deletion.
+-->
 
-## Aufgabe 7 - Wiederherstellen von SharePoint-Inhalten
+## Aufgabe 5 – Wiederherstellen von SharePoint-Inhalten
 
 In dieser Aufgabe simulieren Sie die Wiederherstellung eines gelöschten Dokuments von einer SharePoint-Website, um Ihre Wiederherstellungsoptionen zu überprüfen.
 
-1. Melden Sie sich bei Client 1 VM (SC-401-CL1) im **SC-401-cl1\admin** Konto an.
+1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) als **SC-401-CL1\admin** angemeldet und in Microsoft Purview als Joni Sherman angemeldet sein.
 
-1. Navigieren Sie in **Microsoft Edge** zu **`https://www.office.com`** und melden Sie sich bei Microsoft 365 als **Joni Sherman** an.
+1. Klicken Sie auf das App-Startfeld (das Rastersymbol) in der oberen linken Ecke aus und wählen Sie anschließend im Untermenü **SharePoint** aus.
 
-1. Wählen Sie auf der Zielseite von Microsoft Office 365 das App-Startfeld (das Symbol mit dem Gitter) in der oberen linken Ecke und wählen Sie dann **SharePoint** aus dem Untermenü.
-
-   ![Der Screenshot zeigt, wo die Auslassungspunkte sind, um das Aktionsmenü anzuzeigen.](../Media/show-more-actions-sharepoint.png)
+   ![Der Screenshot zeigt, wo die Auslassungspunkte sind, um das Aktionsmenü anzuzeigen.](../Media/sharepoint-app-launcher.png)
 
 1. Suchen Sie auf der SharePoint Zielseite nach `Benefits` und wählen Sie dann **Vorteile @ Contoso** aus den Suchergebnissen.
 
@@ -296,5 +294,3 @@ In dieser Aufgabe simulieren Sie die Wiederherstellung eines gelöschten Dokumen
 1. Wählen Sie in der linken Seitenleiste **Dokumente** und beachten Sie, dass die Datei wiederhergestellt worden ist.
 
 Sie haben erfolgreich ein gelöschtes Dokument von einer SharePoint- Website befreit.
-
-Sie haben gelöschte Inhalte aus SharePoint wiederhergestellt und damit die Wiederherstellung von Dokumenten im Falle einer versehentlichen oder unbefugten Löschung bestätigt.
