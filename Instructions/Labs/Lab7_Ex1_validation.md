@@ -28,9 +28,7 @@ In dieser Aufgabe überprüfen Sie, ob die veröffentlichten Vertraulichkeitsbez
 
 1. Sie sollten weiterhin bei Client 1 VM (SC-401-CL1) im **SC-401-CL1\admin**-Konto angemeldet sein, und Sie sollten bei Microsoft 365 als **Joni Sherman**`JoniS@WWLxZZZZZZ.onmicrosoft.com` angemeldet sein (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die von Ihrem Anbieter für das Hosting der Übung bereitgestellt wird). Das Passwort von Joni wurde in einer früheren Übung festgelegt.
 
-1. Wählen Sie in Microsoft Edge die App-Startleiste oben links und wählen Sie **Word**.
-
-    ![Screenshot, der zeigt, wo man Word im Menü des App-Startprogramms auswählen kann.](../Media/meatball-menu-word.png)
+1. Navigieren Sie in Microsoft Edge zu `https://word.office.com` und melden Sie sich beim Microsoft Office als **Joni Sherman**`JoniS@WWLxZZZZZZ.onmicrosoft.com` an (wobei ZZZZZZ Ihre eindeutige Mandanten-ID ist, die Sie von Ihrem Anbieter für das Hosting von Labs erhalten haben). Das Passwort von Joni wurde in einer früheren Übung festgelegt.
 
 1. Wählen Sie **Leeres Dokument**.
 
@@ -46,7 +44,7 @@ In dieser Aufgabe überprüfen Sie, ob die veröffentlichten Vertraulichkeitsbez
 
     > [!Note] Es kann 24-48 Stunden dauern, bis neu veröffentlichte Vertraulichkeitsbezeichnungen für die Anwendung zur Verfügung stehen. Wenn die neu erstellten Vertraulichkeitsbezeichnungen nicht verfügbar sind, können Sie **Vertraulich** > **Alle mitarbeitenden Personen** für diese Übung verwenden.
 
-1. Ändern Sie die Vertraulichkeitsbezeichnung in **Öffentlich**, um zu überprüfen, ob das Dialogfeld zur geschäftlichen Rechtfertigung angezeigt wird.
+1. Ändern Sie die Vertraulichkeitsbezeichnung in **Streng vertraulich** > **Projekt - Falcon**, um zu überprüfen, ob das Dialogfeld zur Angabe einer geschäftlichen Begründung angezeigt wird.
 
 1. Wählen Sie **Abbrechen**, um die Vertraulichkeitsbezeichnung beizubehalten.
 
