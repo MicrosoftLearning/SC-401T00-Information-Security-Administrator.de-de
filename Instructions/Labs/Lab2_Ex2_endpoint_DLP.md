@@ -31,7 +31,7 @@ In dieser Aufgabe werden Sie ein Windows 11-Gerät einbinden, damit es für den 
 
 1. Bewegen Sie den Mauszeiger im Dialog **Downloads** über den Download und wählen Sie dann das Symbol des Ordners aus, um **Im Ordner anzeigen**.
 
-1. Entpacken Sie die Zip-Datei auf den **Desktop** des SC-401-CL1. Sie sollten ein Skript mit dem Namen **DeviceComplianceLocalOnboardingScript.cmd** sehen.
+1. Extrahieren Sie die ZIP-Datei auf dem **Desktop** von SC-401-CL2. Sie sollten ein Skript mit dem Namen **DeviceComplianceLocalOnboardingScript.cmd** sehen.
 
 1. Klicken Sie auf dem Desktop mit der rechten Maustaste auf die Datei **DeviceComplianceLocalOnboardingScript.cmd**, die Sie gerade extrahiert haben, und wählen Sie **Weitere Optionen anzeigen**, dann **Eigenschaften**.
 
