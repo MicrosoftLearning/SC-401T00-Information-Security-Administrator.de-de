@@ -73,6 +73,8 @@ In dieser Aufgabe erstellen Sie eine DLP-Richtlinie, die die Übertragung sensib
 
 1. Wählen Sie im linken Bereich **Richtlinien** und wählen Sie dann **+ Richtlinie erstellen**.
 
+1. Wählen Sie auf der Seite **Auswählen, welche Art von Daten geschützt werden soll** die Option **In verbundenen Quellen gespeicherte Daten** und dann **Weiter** aus.
+
 1. Wählen Sie auf der Seite **Starten Sie mit einer Vorlage oder erstellen Sie eine benutzerdefinierte Richtlinie** die Optionen **Benutzerdefiniert** und **Benutzerdefinierte Richtlinie**, und wählen Sie dann **Weiter**.
 
 1. Geben Sie auf der Seite **Benennen Sie Ihre Richtlinie** ein:
