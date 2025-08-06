@@ -37,6 +37,8 @@ In dieser Aufgabe werden Sie eine DLP-Richtlinie im Simulationsmodus erstellen, 
 
 1. Wählen Sie auf der Seite **Richtlinien** die Option **+ Richtlinie erstellen**, um die Konfiguration zum Erstellen einer neuen Richtlinie zum Schutz vor Datenverlust zu starten.
 
+1. Wählen Sie auf der Seite **Auswählen, welche Art von Daten geschützt werden soll** die Option **In verbundenen Quellen gespeicherte Daten** und dann **Weiter** aus.
+
 1. Wählen Sie auf der Seite **Starten Sie mit einer Vorlage oder erstellen Sie eine benutzerdefinierte Richtlinie** die Kategorie **Benutzerdefiniert** und dann **Benutzerdefinierte Richtlinie** unter **Vorschriften**.
 
 1. Wählen Sie **Weiter** aus.
